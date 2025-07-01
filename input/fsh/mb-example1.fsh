@@ -210,7 +210,7 @@ Usage: #example
 * subject = Reference(patientAnnaAndersson)
 * specimen = Reference(labSpecimen1)
 * effectiveDateTime = "2018-01-02T14:30:00+01:00" // Mapped from body/analysis/specimen/timestamp
-* extension[triggeredBy-r5].extension[observation].valueReference = Reference(labOrderOutcomeObservation1) // Mapped from body/analysis/result/related/triggeredBy
+* extension[triggeredBy-r5].extension[observation].valueReference = Reference(labOrderOutcomeObservation2) // Mapped from body/analysis/result/related/triggeredBy
 * performer[0] = Reference(stockholmLab) // Mapped from body/recipientUnit
 
 Instance: amoxicillinKlavulansyraSensitivity
@@ -226,7 +226,7 @@ Usage: #example
 * performer[0] = Reference(stockholmLab)
 * valueCodeableConcept = http://snomed.info/sct#131196009 "S"
 * interpretation[0] = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#S "Susceptible"
-* extension[triggeredBy-r5].extension[observation].valueReference = Reference(labOrderOutcomeObservation1) // Mapped from body/analysis/result/related/triggeredBy
+* extension[triggeredBy-r5].extension[observation].valueReference = Reference(labOrderOutcomeObservation2) // Mapped from body/analysis/result/related/triggeredBy
 
 Instance: mecillinamSensitivity
 InstanceOf: ObservationResultsLaboratoryEu
@@ -241,7 +241,7 @@ Usage: #example
 * performer[0] = Reference(stockholmLab)
 * valueCodeableConcept = http://snomed.info/sct#131196009 "S"
 * interpretation[0] = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#S "Susceptible"
-* extension[triggeredBy-r5].extension[observation].valueReference = Reference(labOrderOutcomeObservation1) // Mapped from body/analysis/result/related/triggeredBy
+* extension[triggeredBy-r5].extension[observation].valueReference = Reference(labOrderOutcomeObservation2) // Mapped from body/analysis/result/related/triggeredBy
 
 Instance: nitrofurantoinSensitivity
 InstanceOf: ObservationResultsLaboratoryEu
@@ -256,7 +256,7 @@ Usage: #example
 * performer[0] = Reference(stockholmLab)
 * valueCodeableConcept = http://snomed.info/sct#131196009 "S"
 * interpretation[0] = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#S "Susceptible"
-* extension[triggeredBy-r5].extension[observation].valueReference = Reference(labOrderOutcomeObservation1) // Mapped from body/analysis/result/related/triggeredBy
+* extension[triggeredBy-r5].extension[observation].valueReference = Reference(labOrderOutcomeObservation2) // Mapped from body/analysis/result/related/triggeredBy
 
 Instance: trimetoprimSensitivity2
 InstanceOf: ObservationResultsLaboratoryEu
@@ -271,7 +271,7 @@ Usage: #example
 * performer[0] = Reference(stockholmLab)
 * valueCodeableConcept = http://snomed.info/sct#131196009 "S"
 * interpretation[0] = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#S "Susceptible"
-* extension[triggeredBy-r5].extension[observation].valueReference = Reference(labOrderOutcomeObservation1) // Mapped from body/analysis/result/related/triggeredBy
+* extension[triggeredBy-r5].extension[observation].valueReference = Reference(labOrderOutcomeObservation2) // Mapped from body/analysis/result/related/triggeredBy
 
 Instance: labSpecimen1
 InstanceOf: SpecimenEu
