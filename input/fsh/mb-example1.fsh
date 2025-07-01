@@ -15,9 +15,9 @@ Usage: #example
 * entry[patient].fullUrl = "urn:uuid:7e4b1c10-1a2b-4c3d-8e5f-000000000017" // Assuming a patient context
 * entry[patient].resource = patientAnnaAndersson // Assuming a patient context
 * entry[observation][+].fullUrl = "urn:uuid:7e4b1c10-1a2b-4c3d-8e5f-000000000004"
-* entry[observation][=].resource = labOrderOutcomeObservation
+* entry[observation][=].resource = Culture
 * entry[observation][+].fullUrl = "urn:uuid:7e4b1c10-1a2b-4c3d-8e5f-000000000005"
-* entry[observation][=].resource = labOrderOutcomeObservation1
+* entry[observation][=].resource = CultureResult1
 * entry[observation][+].fullUrl = "urn:uuid:7e4b1c10-1a2b-4c3d-8e5f-000000000006"
 * entry[observation][=].resource = colonyCount1
 * entry[observation][+].fullUrl = "urn:uuid:7e4b1c10-1a2b-4c3d-8e5f-000000000007"
@@ -29,7 +29,7 @@ Usage: #example
 * entry[observation][+].fullUrl = "urn:uuid:7e4b1c10-1a2b-4c3d-8e5f-00000000000a"
 * entry[observation][=].resource = trimetoprimSensitivity
 * entry[observation][+].fullUrl = "urn:uuid:7e4b1c10-1a2b-4c3d-8e5f-00000000000b"
-* entry[observation][=].resource = labOrderOutcomeObservation2
+* entry[observation][=].resource = CultureResult2
 * entry[observation][+].fullUrl = "urn:uuid:7e4b1c10-1a2b-4c3d-8e5f-00000000000c"
 * entry[observation][=].resource = colonyCount2
 * entry[observation][+].fullUrl = "urn:uuid:7e4b1c10-1a2b-4c3d-8e5f-00000000000d"
@@ -65,7 +65,7 @@ Usage: #example
 * title = "Urinodling kvantitativ och resistensbestämning SIR" // M
 * section[lab-no-subsections].code = $loinc#18725-2 "Microbiology studies (set)"
 * section[lab-no-subsections].title = "Urinodling kvantitativ och resistensbestämning SIR" // Mapped from body/groupOfAnalyses/name
-* section[lab-no-subsections].entry = Reference(labOrderOutcomeObservation)
+* section[lab-no-subsections].entry = Reference(Culture)
 
 Instance: mbDiagnosticReport
 InstanceOf: DiagnosticReportLabEu
@@ -77,7 +77,7 @@ Usage: #example
 * code = $loinc#11502-2 "Laboratory report"
 * subject = Reference(patientAnnaAndersson)
 
-Instance: labOrderOutcomeObservation
+Instance: Culture
 InstanceOf: ObservationResultsLaboratoryEu
 Usage: #example
 * id = "7e4b1c10-1a2b-4c3d-8e5f-000000000004"
@@ -88,10 +88,10 @@ Usage: #example
 * specimen = Reference(labSpecimen1)
 * effectiveDateTime = "2018-01-02T14:30:00+01:00" // Mapped from body/analysis/specimen/timestamp
 * performer[0] = Reference(stockholmLab) // Mapped from body/recipientUnit
-* hasMember[0] = Reference(labOrderOutcomeObservation1) // Mapped from body/analysis/result
-* hasMember[1] = Reference(labOrderOutcomeObservation2) // Mapped from body/analysis/result/value/quantity
+* hasMember[0] = Reference(CultureResult1) // Mapped from body/analysis/result
+* hasMember[1] = Reference(CultureResult2) // Mapped from body/analysis/result/value/quantity
 
-Instance: labOrderOutcomeObservation1
+Instance: CultureResult1
 InstanceOf: ObservationResultsLaboratoryEu
 Usage: #example
 * id = "7e4b1c10-1a2b-4c3d-8e5f-000000000005"
@@ -119,7 +119,7 @@ Usage: #example
 * subject = Reference(patientAnnaAndersson)
 * specimen = Reference(labSpecimen1)
 * effectiveDateTime = 2018-01-02T14:30:00+01:00 // Mapped from body/analysis/specimen/timestamp
-* extension[triggeredBy-r5].extension[observation].valueReference = Reference(labOrderOutcomeObservation1) // Mapped from body/analysis/result/related/triggeredBy
+* extension[triggeredBy-r5].extension[observation].valueReference = Reference(CultureResult1) // Mapped from body/analysis/result/related/triggeredBy
 * performer[0] = Reference(stockholmLab) // Mapped from body/recipientUnit
 
 Instance: amoxicillinSensitivity
@@ -135,7 +135,7 @@ Usage: #example
 * performer[0] = Reference(stockholmLab)
 * valueCodeableConcept = http://snomed.info/sct#131196009 "S" // Mapped from body/analysis/result/related/result/value/cv
 * interpretation[0] = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#S "Susceptible"
-* extension[triggeredBy-r5].extension[observation].valueReference = Reference(labOrderOutcomeObservation1) // Mapped from body/analysis/result/related/triggeredBy
+* extension[triggeredBy-r5].extension[observation].valueReference = Reference(CultureResult1) // Mapped from body/analysis/result/related/triggeredBy
 
 Instance: piperacillinTazobactamSensitivity
 InstanceOf: ObservationResultsLaboratoryEu
@@ -150,7 +150,7 @@ Usage: #example
 * performer[0] = Reference(stockholmLab)
 * valueCodeableConcept = http://snomed.info/sct#131196009 "S"
 * interpretation[0] = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#S "Susceptible"
-* extension[triggeredBy-r5].extension[observation].valueReference = Reference(labOrderOutcomeObservation1) // Mapped from body/analysis/result/related/triggeredBy
+* extension[triggeredBy-r5].extension[observation].valueReference = Reference(CultureResult1) // Mapped from body/analysis/result/related/triggeredBy
 
 Instance: ciprofloxacinSensitivity
 InstanceOf: ObservationResultsLaboratoryEu
@@ -165,7 +165,7 @@ Usage: #example
 * performer[0] = Reference(stockholmLab)
 * valueCodeableConcept = http://snomed.info/sct#30714006 "R" // Mapped to R - Resistant
 * interpretation[0] = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#R "Resistant"
-* extension[triggeredBy-r5].extension[observation].valueReference = Reference(labOrderOutcomeObservation1) // Mapped from body/analysis/result/related/triggeredBy
+* extension[triggeredBy-r5].extension[observation].valueReference = Reference(CultureResult1) // Mapped from body/analysis/result/related/triggeredBy
 
 Instance: trimetoprimSensitivity
 InstanceOf: ObservationResultsLaboratoryEu
@@ -180,9 +180,9 @@ Usage: #example
 * performer[0] = Reference(stockholmLab)
 * valueCodeableConcept = http://snomed.info/sct#264841006 "I" // Mapped to I - Intermediate
 * interpretation[0] = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#I "Intermediate"
-* extension[triggeredBy-r5].extension[observation].valueReference = Reference(labOrderOutcomeObservation1) // Mapped from body/analysis/result/related/triggeredBy
+* extension[triggeredBy-r5].extension[observation].valueReference = Reference(CultureResult1) // Mapped from body/analysis/result/related/triggeredBy
 
-Instance: labOrderOutcomeObservation2
+Instance: CultureResult2
 InstanceOf: ObservationResultsLaboratoryEu
 Usage: #example
 * id = "7e4b1c10-1a2b-4c3d-8e5f-00000000000b"
@@ -210,7 +210,7 @@ Usage: #example
 * subject = Reference(patientAnnaAndersson)
 * specimen = Reference(labSpecimen1)
 * effectiveDateTime = "2018-01-02T14:30:00+01:00" // Mapped from body/analysis/specimen/timestamp
-* extension[triggeredBy-r5].extension[observation].valueReference = Reference(labOrderOutcomeObservation2) // Mapped from body/analysis/result/related/triggeredBy
+* extension[triggeredBy-r5].extension[observation].valueReference = Reference(CultureResult2) // Mapped from body/analysis/result/related/triggeredBy
 * performer[0] = Reference(stockholmLab) // Mapped from body/recipientUnit
 
 Instance: amoxicillinKlavulansyraSensitivity
@@ -226,7 +226,7 @@ Usage: #example
 * performer[0] = Reference(stockholmLab)
 * valueCodeableConcept = http://snomed.info/sct#131196009 "S"
 * interpretation[0] = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#S "Susceptible"
-* extension[triggeredBy-r5].extension[observation].valueReference = Reference(labOrderOutcomeObservation2) // Mapped from body/analysis/result/related/triggeredBy
+* extension[triggeredBy-r5].extension[observation].valueReference = Reference(CultureResult2) // Mapped from body/analysis/result/related/triggeredBy
 
 Instance: mecillinamSensitivity
 InstanceOf: ObservationResultsLaboratoryEu
@@ -241,7 +241,7 @@ Usage: #example
 * performer[0] = Reference(stockholmLab)
 * valueCodeableConcept = http://snomed.info/sct#131196009 "S"
 * interpretation[0] = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#S "Susceptible"
-* extension[triggeredBy-r5].extension[observation].valueReference = Reference(labOrderOutcomeObservation2) // Mapped from body/analysis/result/related/triggeredBy
+* extension[triggeredBy-r5].extension[observation].valueReference = Reference(CultureResult2) // Mapped from body/analysis/result/related/triggeredBy
 
 Instance: nitrofurantoinSensitivity
 InstanceOf: ObservationResultsLaboratoryEu
@@ -256,7 +256,7 @@ Usage: #example
 * performer[0] = Reference(stockholmLab)
 * valueCodeableConcept = http://snomed.info/sct#131196009 "S"
 * interpretation[0] = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#S "Susceptible"
-* extension[triggeredBy-r5].extension[observation].valueReference = Reference(labOrderOutcomeObservation2) // Mapped from body/analysis/result/related/triggeredBy
+* extension[triggeredBy-r5].extension[observation].valueReference = Reference(CultureResult2) // Mapped from body/analysis/result/related/triggeredBy
 
 Instance: trimetoprimSensitivity2
 InstanceOf: ObservationResultsLaboratoryEu
@@ -271,7 +271,7 @@ Usage: #example
 * performer[0] = Reference(stockholmLab)
 * valueCodeableConcept = http://snomed.info/sct#131196009 "S"
 * interpretation[0] = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#S "Susceptible"
-* extension[triggeredBy-r5].extension[observation].valueReference = Reference(labOrderOutcomeObservation2) // Mapped from body/analysis/result/related/triggeredBy
+* extension[triggeredBy-r5].extension[observation].valueReference = Reference(CultureResult2) // Mapped from body/analysis/result/related/triggeredBy
 
 Instance: labSpecimen1
 InstanceOf: SpecimenEu

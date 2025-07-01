@@ -1,0 +1,102 @@
+@startuml
+skinparam linetype polyline
+hide circle
+hide stereotype
+hide methods
+left to right direction
+
+
+
+component Result1 {
+
+object CultureResult1 {
+    code = NPU06096 U(mittstr)—Bakterieodling
+    valueCodeableConcept = http://snomed.info/sct#78065002 "Enterococcus faecalis"
+}
+
+object colonyCount1 {
+    code = NPU58643 U(mittstr)—Bakterie (ant)
+    valueQuantity.value = 100000
+    valueQuantity.unit = "CFU/mL"
+}
+CultureResult1 -- colonyCount1 : triggeredBy <
+
+object AmoxicillinSensitivity {
+    code = NPU06001 Amoxicillin
+    valueCodeableConcept = http://snomed.info/sct#131196009 "S"
+}
+
+AmoxicillinSensitivity -- CultureResult1 : triggeredBy <
+
+object PiperacillinTazobactamSensitivity {
+    code = NPU07424 Piperacillin+Tazobaktam
+    valueCodeableConcept = http://snomed.info/sct#131196009 "S"
+}
+
+PiperacillinTazobactamSensitivity -- CultureResult1 : triggeredBy <
+
+object CiprofloxacinSensitivity {
+    code = NPU06049 Ciprofloxacin
+    valueCodeableConcept = http://snomed.info/sct#30714006 "R"
+}
+
+CiprofloxacinSensitivity -- CultureResult1 : triggeredBy <
+
+object TrimetoprimSensitivity {
+    code = NPU06047 Trimetoprim
+    valueCodeableConcept = http://snomed.info/sct#264841006 "I"
+}
+
+TrimetoprimSensitivity -- CultureResult1 : triggeredBy <
+}
+
+
+component Result2 {
+
+object CultureResult2 {
+    code = NPU06096 U(mittstr)—Bakterieodling
+    valueCodeableConcept = http://snomed.info/sct#112283007 "Escherichia coli"
+}
+
+object colonyCount2 {
+    code = NPU58643 U(mittstr)—Bakterie (ant)
+    valueQuantity.value = 100000
+    valueQuantity.unit = "CFU/mL"
+}
+
+CultureResult2 - colonyCount2 : triggeredBy <
+
+
+object AmoxicillinKlavulansyraSensitivity {
+    code = NPU06002 Amoxicillin+Klavulansyra
+    valueCodeableConcept = http://snomed.info/sct#131196009 "S"
+}
+
+AmoxicillinKlavulansyraSensitivity -- CultureResult2 : triggeredBy <
+
+object MecillinamSensitivity {
+    code = NPU06044 Mecillinam
+    valueCodeableConcept = http://snomed.info/sct#131196009 "S"
+}
+MecillinamSensitivity -- CultureResult2 : triggeredBy <
+
+object NitrofurantoinSensitivity {
+    code = NPU06045 Nitrofurantoin 
+    valueCodeableConcept = http://snomed.info/sct#131196009 "S"
+}
+NitrofurantoinSensitivity -- CultureResult2 : triggeredBy <
+
+object TrimetoprimSensitivity2 {
+    code = NPU06047 Trimetoprim
+    valueCodeableConcept = http://snomed.info/sct#131196009 "S"
+}
+TrimetoprimSensitivity2 -- CultureResult2 : triggeredBy <
+}
+
+object Culture {
+    code = NPU06096 U(mittstr)—Bakterieodling
+}
+Culture -- CultureResult1 : hasMember >
+Culture -- CultureResult2 : hasMember >
+
+@enduml
