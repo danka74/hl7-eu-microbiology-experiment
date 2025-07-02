@@ -10,41 +10,41 @@ left to right direction
 component Result1 {
 
 object CultureResult1 {
-    code = NPU06096 U(mittstr)—Bakterieodling
-    valueCodeableConcept = http://snomed.info/sct#78065002 "Enterococcus faecalis"
+    code = NPU06096 U(midstream)—Bacterium; taxon(proc.) = ?
+    valueCodeableConcept = 78065002 | Enterococcus faecalis |
 }
 
 object colonyCount1 {
-    code = NPU58643 U(mittstr)—Bakterie (ant)
+    code = NPU58643 U(midstream)—Bacterium; arb.num.c.(proc.) = ? (p.d.u.)
     valueQuantity.value = 100000
     valueQuantity.unit = "CFU/mL"
 }
 CultureResult1 -- colonyCount1 : triggeredBy <
 
 object AmoxicillinSensitivity {
-    code = NPU06001 Amoxicillin
-    valueCodeableConcept = http://snomed.info/sct#131196009 "S"
+    code = NPU06001 Syst—Amoxicillin; suscept. = ?
+    valueCodeableConcept = 131196009 | Susceptible |
 }
 
 AmoxicillinSensitivity -- CultureResult1 : triggeredBy >
 
 object PiperacillinTazobactamSensitivity {
-    code = NPU07424 Piperacillin+Tazobaktam
-    valueCodeableConcept = http://snomed.info/sct#131196009 "S"
+    code = NPU07424 Syst—Piperacillin+tazobactam; suscept. = ?
+    valueCodeableConcept = 131196009 | Susceptible |
 }
 
 PiperacillinTazobactamSensitivity -- CultureResult1 : triggeredBy >
 
 object CiprofloxacinSensitivity {
-    code = NPU06049 Ciprofloxacin
-    valueCodeableConcept = http://snomed.info/sct#30714006 "R"
+    code = NPU06049 Syst—Ciprofloxacin; suscept. = ?
+    valueCodeableConcept = 30714006 | Resistant |
 }
 
 CiprofloxacinSensitivity -- CultureResult1 : triggeredBy >
 
 object TrimetoprimSensitivity {
-    code = NPU06047 Trimetoprim
-    valueCodeableConcept = http://snomed.info/sct#264841006 "I"
+    code = NPU06047 Syst—Trimethoprim; suscept. = ?
+    valueCodeableConcept = 264841006 |  Intermediately susceptible |
 }
 
 TrimetoprimSensitivity -- CultureResult1 : triggeredBy >
@@ -54,12 +54,12 @@ TrimetoprimSensitivity -- CultureResult1 : triggeredBy >
 component Result2 {
 
 object CultureResult2 {
-    code = NPU06096 U(mittstr)—Bakterieodling
-    valueCodeableConcept = http://snomed.info/sct#112283007 "Escherichia coli"
+    code = NPU06096 U(midstream)—Bacterium; taxon(proc.) = ?
+    valueCodeableConcept = 112283007 | Escherichia coli |
 }
 
 object colonyCount2 {
-    code = NPU58643 U(mittstr)—Bakterie (ant)
+    code = NPU58643 U(midstream)—Bacterium; arb.num.c.(proc.) = ? (p.d.u.)
     valueQuantity.value = 100000
     valueQuantity.unit = "CFU/mL"
 }
@@ -68,33 +68,33 @@ CultureResult2 - colonyCount2 : triggeredBy <
 
 
 object AmoxicillinKlavulansyraSensitivity {
-    code = NPU06002 Amoxicillin+Klavulansyra
-    valueCodeableConcept = http://snomed.info/sct#131196009 "S"
+    code = NPU06002 Syst—Amoxicillin+Clavulanic acid; suscept. = ?
+    valueCodeableConcept = 131196009 | Susceptible |
 }
 
 AmoxicillinKlavulansyraSensitivity -- CultureResult2 : triggeredBy >
 
 object MecillinamSensitivity {
-    code = NPU06044 Mecillinam
-    valueCodeableConcept = http://snomed.info/sct#131196009 "S"
+    code = NPU06044 Syst—Mecillinam; suscept. = ?
+    valueCodeableConcept = 131196009 | Susceptible |
 }
 MecillinamSensitivity -- CultureResult2 : triggeredBy >
 
 object NitrofurantoinSensitivity {
-    code = NPU06045 Nitrofurantoin 
-    valueCodeableConcept = http://snomed.info/sct#131196009 "S"
+    code = NPU06048 Syst—Nitrofurantoin; suscept. = ? 
+    valueCodeableConcept = 131196009 | Susceptible |
 }
 NitrofurantoinSensitivity -- CultureResult2 : triggeredBy >
 
 object TrimetoprimSensitivity2 {
-    code = NPU06047 Trimetoprim
-    valueCodeableConcept = http://snomed.info/sct#131196009 "S"
+    code = NPU06047 Syst—Trimethoprim; suscept. = ?
+    valueCodeableConcept = 131196009 | Susceptible |
 }
 TrimetoprimSensitivity2 -- CultureResult2 : triggeredBy >
 }
 
 object Culture {
-    code = NPU06096 U(mittstr)—Bakterieodling
+    code = NPU06096 U(midstream)—Bacterium; taxon(proc.) = ?
 }
 Culture -- CultureResult1 : hasMember >
 Culture -- CultureResult2 : hasMember >
