@@ -19,35 +19,35 @@ object colonyCount1 {
     valueQuantity.value = 100000
     valueQuantity.unit = "CFU/mL"
 }
-CultureResult1 -- colonyCount1 : triggeredBy <
+CultureResult1 -- colonyCount1 : triggeredBy >
 
 object AmoxicillinSensitivity {
     code = NPU06001 Amoxicillin
     valueCodeableConcept = http://snomed.info/sct#131196009 "S"
 }
 
-AmoxicillinSensitivity -- CultureResult1 : triggeredBy <
+AmoxicillinSensitivity -- CultureResult1 : triggeredBy >
 
 object PiperacillinTazobactamSensitivity {
     code = NPU07424 Piperacillin+Tazobaktam
     valueCodeableConcept = http://snomed.info/sct#131196009 "S"
 }
 
-PiperacillinTazobactamSensitivity -- CultureResult1 : triggeredBy <
+PiperacillinTazobactamSensitivity -- CultureResult1 : triggeredBy >
 
 object CiprofloxacinSensitivity {
     code = NPU06049 Ciprofloxacin
     valueCodeableConcept = http://snomed.info/sct#30714006 "R"
 }
 
-CiprofloxacinSensitivity -- CultureResult1 : triggeredBy <
+CiprofloxacinSensitivity -- CultureResult1 : triggeredBy >
 
 object TrimetoprimSensitivity {
     code = NPU06047 Trimetoprim
     valueCodeableConcept = http://snomed.info/sct#264841006 "I"
 }
 
-TrimetoprimSensitivity -- CultureResult1 : triggeredBy <
+TrimetoprimSensitivity -- CultureResult1 : triggeredBy >
 }
 
 
@@ -64,7 +64,7 @@ object colonyCount2 {
     valueQuantity.unit = "CFU/mL"
 }
 
-CultureResult2 - colonyCount2 : triggeredBy <
+CultureResult2 - colonyCount2 : triggeredBy >
 
 
 object AmoxicillinKlavulansyraSensitivity {
@@ -72,25 +72,25 @@ object AmoxicillinKlavulansyraSensitivity {
     valueCodeableConcept = http://snomed.info/sct#131196009 "S"
 }
 
-AmoxicillinKlavulansyraSensitivity -- CultureResult2 : triggeredBy <
+AmoxicillinKlavulansyraSensitivity -- CultureResult2 : triggeredBy >
 
 object MecillinamSensitivity {
     code = NPU06044 Mecillinam
     valueCodeableConcept = http://snomed.info/sct#131196009 "S"
 }
-MecillinamSensitivity -- CultureResult2 : triggeredBy <
+MecillinamSensitivity -- CultureResult2 : triggeredBy >
 
 object NitrofurantoinSensitivity {
     code = NPU06045 Nitrofurantoin 
     valueCodeableConcept = http://snomed.info/sct#131196009 "S"
 }
-NitrofurantoinSensitivity -- CultureResult2 : triggeredBy <
+NitrofurantoinSensitivity -- CultureResult2 : triggeredBy >
 
 object TrimetoprimSensitivity2 {
     code = NPU06047 Trimetoprim
     valueCodeableConcept = http://snomed.info/sct#131196009 "S"
 }
-TrimetoprimSensitivity2 -- CultureResult2 : triggeredBy <
+TrimetoprimSensitivity2 -- CultureResult2 : triggeredBy >
 }
 
 object Culture {
