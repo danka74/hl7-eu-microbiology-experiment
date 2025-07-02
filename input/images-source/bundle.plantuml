@@ -19,7 +19,7 @@ object colonyCount1 {
     valueQuantity.value = 100000
     valueQuantity.unit = "CFU/mL"
 }
-CultureResult1 -- colonyCount1 : triggeredBy >
+CultureResult1 -- colonyCount1 : triggeredBy <
 
 object AmoxicillinSensitivity {
     code = NPU06001 Amoxicillin
@@ -64,7 +64,7 @@ object colonyCount2 {
     valueQuantity.unit = "CFU/mL"
 }
 
-CultureResult2 - colonyCount2 : triggeredBy >
+CultureResult2 - colonyCount2 : triggeredBy <
 
 
 object AmoxicillinKlavulansyraSensitivity {
