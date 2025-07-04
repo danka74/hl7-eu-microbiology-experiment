@@ -274,7 +274,7 @@ Usage: #example
 * extension[triggeredBy-r5].extension[observation].valueReference = Reference(CultureResult2) // Mapped from body/analysis/result/related/triggeredBy
 
 Instance: labSpecimen1
-InstanceOf: SpecimenEu
+InstanceOf: Specimen-eu-lab
 Usage: #example
 * id = "7e4b1c10-1a2b-4c3d-8e5f-000000000011"
 * identifier[0].system = "LOAD-MOCKS" // Mapped from body/analysis/identifier
