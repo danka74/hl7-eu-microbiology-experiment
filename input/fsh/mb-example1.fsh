@@ -83,7 +83,8 @@ Usage: #example
 * id = "7e4b1c10-1a2b-4c3d-8e5f-000000000004"
 * status = #final
 * category[laboratory] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory "Laboratory"
-* code = $npu#NPU06096 "U(mittstr)—Bakterieodling" // Mapped from body/analysis/code and body/analysis/result/type
+* code.coding[+] = $npu#NPU06096 "U(mittstr)—Bakterieodling" // Mapped from body/analysis/code and body/analysis/result/type
+* code.coding[+] = $loinc#630-4 "Bacteria Ur Cult"
 * subject = Reference(patientAnnaAndersson) // Assuming a patient context
 * specimen = Reference(labSpecimen1)
 * effectiveDateTime = "2018-01-02T14:30:00+01:00" // Mapped from body/analysis/specimen/timestamp
