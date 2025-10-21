@@ -5,8 +5,6 @@ hide stereotype
 hide methods
 left to right direction
 
-
-
 component Result1 {
 
 object CultureResult1 {
